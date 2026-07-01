@@ -36,7 +36,8 @@ If you selected **Visual (V) Mode**, prep your testing assets:
 ### 3. Generate the Prompt Specification
 Use `vllm_promptmaker.txt` to structure your design concept. Pass your raw layout requirements through this prompt configuration to apply your target Detail Scale ($D$) properties. This step outputs the exact technical layout instructions for the evaluation run.
 $\color{red}{\text{On V: Attach your Image and let it run, then reattach the image to step 4}}$
-$\color{green}{\text{On T: Attach your Image and let it generate the prompt do not reattach it on step 4 as T means your model is physically incapable of seeing images, for this use Gemini,Qwen,Kimi,GLM or any other free model to not waste money!}}$
+$\color{green}{\text{On T: Attach your Image and let it generate the prompt do not reattach it on step 4 as T means your model is physically incapable of seeing images.}}$  
+<mark>for this step use a vllm!!<mark>
 
 ### 4. Execute the Target Model (Design Maker)
 Take the generated prompt specification from Step 3 and feed it to the fresh instance of the model you are testing via your chosen Chat GUI or API endpoint. You must attach the instructions from `vllm_designmaker.txt` as the system prompt to force the model to output pure standalone code. Note the exact execution time from the first token to the completed output stream.
